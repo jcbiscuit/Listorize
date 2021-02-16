@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, Testx3!")
+        Text("Hello, Test!")
             .bold()
             .frame(width: 200, height: 200)
             .foregroundColor(.black)
