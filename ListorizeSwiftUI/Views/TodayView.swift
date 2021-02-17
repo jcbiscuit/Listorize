@@ -8,13 +8,31 @@
 import SwiftUI
 
 struct TodayView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color("BackgroundColor")
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("🔥 LISTORIZE 🔥 \n \n TODAY ").bold().kerning(2.5).multilineTextAlignment(.center)
+                    .frame(width: 400, height: 80)
+                    .font(.system(size: 20))
+                    .foregroundColor(Color("TextColor"))
+                    .background(Color("TodayColor"))
+                    .cornerRadius(50)
+                    .padding(.bottom, 700)
+                
+                
+//            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(5.0), Color.clear]), startPoint: .bottom, endPoint: .top)
+        
     }
 }
-
+}
 struct TodayView_Previews: PreviewProvider {
     static var previews: some View {
         TodayView()
+        TodayView()
+            .preferredColorScheme(.light)
     }
+}
 }

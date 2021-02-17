@@ -9,7 +9,21 @@ import SwiftUI
 
 struct NextMonthView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color("BackgroundColor")
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("🔥 LISTORIZE 🔥 \n \n NEXT MONTH ").bold().kerning(2.5).multilineTextAlignment(.center)
+                    .frame(width: 400, height: 80)
+                    .font(.system(size: 20))
+                    .foregroundColor(Color("TextColor"))
+                    .background(Color("NextMonthColor"))
+                    .cornerRadius(50)
+                    .padding(.bottom, 700)
+//            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(5.0), Color.clear]), startPoint: .top, endPoint: .bottom)
+        
+        
+    }
     }
 }
 
@@ -17,4 +31,5 @@ struct NextMonthView_Previews: PreviewProvider {
     static var previews: some View {
         NextMonthView()
     }
+}
 }
