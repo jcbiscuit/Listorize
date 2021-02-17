@@ -14,7 +14,7 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
         VStack {
             Text("🔥 LISTORIZE 🔥").bold().kerning(2.5)
-                .font(.system(size: 40)).foregroundColor(.white)
+                .font(.system(size: 40)).foregroundColor(Color("TextColor"))
                 .padding(.bottom, 50)
             
             Button(action: {}) {
@@ -26,10 +26,6 @@ struct ContentView: View {
                         LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
                     })
                     .cornerRadius(50)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 50)
-                            .strokeBorder(Color.white, lineWidth: 4.0)
-                            )
                     .padding()
             }
             Button(action: {}) {
