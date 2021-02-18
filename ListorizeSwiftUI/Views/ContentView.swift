@@ -16,13 +16,13 @@ struct ContentView: View {
             
             NavigationView {
                 VStack {
-                    Text("🔥 LISTORIZE 🔥").bold().kerning(2.5)
-                        .font(.system(size: 40)).foregroundColor(Color("TextColor"))
+                    Text("LISTORIZE").bold().underline().kerning(2.5)
+                        .font(.system(size: 40)).fontWeight(.thin).foregroundColor(Color("TextColor"))
                         .padding(.bottom, 60)
                     
                     NavigationLink(
                         destination: TodayView()) {
-                        Text("Today").bold().kerning(2.5)
+                        Text("TODAY").bold().font(.system(size: 20)).kerning(2.5)
                             .frame(width: 400, height: 70)
                             .foregroundColor(.black)
                             .background(ZStack {
@@ -35,7 +35,7 @@ struct ContentView: View {
             }
                     NavigationLink(
                         destination: TomorrowView()) {
-                        Text("Tomorrow") .bold().kerning(2.5)
+                        Text("TOMORROW") .bold().font(.system(size: 20)).kerning(2.5)
                             .frame(width: 400, height: 70)
                             .foregroundColor(.black)
                             .background(ZStack {
@@ -48,7 +48,7 @@ struct ContentView: View {
             }
                     NavigationLink(
                         destination: NextWeekView()) {
-                    Text("Next Week").bold().kerning(2.5)
+                        Text("NEXT WEEK").bold().font(.system(size: 20)).kerning(2.5)
                         .frame(width: 400, height: 70)
                         .foregroundColor(.black)
                         .background(ZStack {
@@ -60,7 +60,7 @@ struct ContentView: View {
             }
                 NavigationLink(
                     destination: NextMonthView()) {
-                    Text("Next Month") .bold().kerning(2.5)
+                    Text("NEXT MONTH").font(.system(size: 20)).bold().kerning(2.5)
                         .frame(width: 400, height: 70)
                         .foregroundColor(.black)
                         .background(ZStack {
@@ -72,7 +72,7 @@ struct ContentView: View {
                 }
                 NavigationLink(
                     destination: NextYearView()) {
-                    Text("Next Year").bold().kerning(2.5)
+                    Text("NEXT YEAR").font(.system(size: 20)).bold().kerning(2.5)
                         .frame(width: 400, height: 70)
                         .foregroundColor(.black)
                         .background(ZStack {
