@@ -18,6 +18,7 @@
 		316C9BAD25DBF57C001A5E7C /* NextWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9BAC25DBF57C001A5E7C /* NextWeekView.swift */; };
 		316C9BB225DBF588001A5E7C /* NextMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9BB125DBF588001A5E7C /* NextMonthView.swift */; };
 		316C9BB725DBF595001A5E7C /* NextYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9BB625DBF595001A5E7C /* NextYearView.swift */; };
+		3172BCE625DDEA43009FE08E /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3172BCE525DDEA43009FE08E /* ToDoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		316C9BAC25DBF57C001A5E7C /* NextWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWeekView.swift; sourceTree = "<group>"; };
 		316C9BB125DBF588001A5E7C /* NextMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextMonthView.swift; sourceTree = "<group>"; };
 		316C9BB625DBF595001A5E7C /* NextYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextYearView.swift; sourceTree = "<group>"; };
+		3172BCE525DDEA43009FE08E /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				316C9BB125DBF588001A5E7C /* NextMonthView.swift */,
 				316C9BB625DBF595001A5E7C /* NextYearView.swift */,
 				310F7FC625DB4C870027CA79 /* Info.plist */,
+				3172BCE525DDEA43009FE08E /* ToDoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			files = (
 				316C9BB225DBF588001A5E7C /* NextMonthView.swift in Sources */,
 				310F7FC025DB4C840027CA79 /* ContentView.swift in Sources */,
+				3172BCE625DDEA43009FE08E /* ToDoView.swift in Sources */,
 				316C9BA525DBF56E001A5E7C /* TomorrowView.swift in Sources */,
 				316C9BAD25DBF57C001A5E7C /* NextWeekView.swift in Sources */,
 				316C9BA025DBF556001A5E7C /* TodayView.swift in Sources */,

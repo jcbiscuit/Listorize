@@ -16,7 +16,7 @@ struct TomorrowView: View {
                 Text("🔥 LISTORIZE 🔥 \n \n TOMORROW ").bold().kerning(2.5).multilineTextAlignment(.center)
                     .frame(width: 400, height: 80)
                     .font(.system(size: 20))
-                    .foregroundColor(Color("TextColor"))
+                    .foregroundColor(Color("ScreenTextColor"))
                     .background(Color("TomorrowColor"))
                     .cornerRadius(50)
                     .padding(.bottom, 700)

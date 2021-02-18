@@ -16,7 +16,7 @@ struct NextWeekView: View {
                 Text("🔥 LISTORIZE 🔥 \n \n NEXT WEEK ").bold().kerning(2.5).multilineTextAlignment(.center)
                     .frame(width: 400, height: 80)
                     .font(.system(size: 20))
-                    .foregroundColor(Color("TextColor"))
+                    .foregroundColor(Color("ScreenTextColor"))
                     .background(Color("NextWeekColor"))
                     .cornerRadius(50)
                     .padding(.bottom, 700)

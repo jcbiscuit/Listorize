@@ -17,10 +17,17 @@ struct TodayView: View {
                 Text("🔥 LISTORIZE 🔥 \n \n TODAY ").bold().kerning(2.5).multilineTextAlignment(.center)
                     .frame(width: 400, height: 80)
                     .font(.system(size: 20))
-                    .foregroundColor(Color("TextColor"))
+                    .foregroundColor(Color("ScreenTextColor"))
                     .background(Color("TodayColor"))
                     .cornerRadius(50)
-                    .padding(.bottom, 700)
+                    .padding(.bottom)
+                
+               List {
+                    Text("Let's get started")
+                    Text("Next task")
+                }
+                
+    
                 
                 
 //            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(5.0), Color.clear]), startPoint: .bottom, endPoint: .top)

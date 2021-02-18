@@ -16,7 +16,7 @@ struct NextMonthView: View {
                 Text("🔥 LISTORIZE 🔥 \n \n NEXT MONTH ").bold().kerning(2.5).multilineTextAlignment(.center)
                     .frame(width: 400, height: 80)
                     .font(.system(size: 20))
-                    .foregroundColor(Color("TextColor"))
+                    .foregroundColor(Color("ScreenTextColor"))
                     .background(Color("NextMonthColor"))
                     .cornerRadius(50)
                     .padding(.bottom, 700)
