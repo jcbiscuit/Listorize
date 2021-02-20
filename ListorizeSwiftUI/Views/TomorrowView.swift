@@ -15,9 +15,10 @@ struct TomorrowView: View {
     
     var searchBar: some View {
         HStack {
-            TextField("Enter in a new task", text: self.$newToDo)
+            TextField("Listorize Tomorrow", text: self.$newToDo)
             Button(action: self.addNewToDo, label: {
-                Text("+").font(.system(size: 40)).foregroundColor(Color("TextColor"))
+                Image(systemName: "plus").foregroundColor(.black)
+              
             })
             }
         }
@@ -30,13 +31,13 @@ struct TomorrowView: View {
     var body: some View {
      
             VStack {
-                Text("TOMORROW").bold().kerning(2.5).multilineTextAlignment(.center)
-                    .frame(width: 400, height: 80)
-                    .font(.system(size: 20))
-                    .foregroundColor(Color("ScreenTextColor"))
-                    .background(Color("TomorrowColor"))
-                    .cornerRadius(50)
-                    .padding(.bottom)
+//                Text("TOMORROW").bold().kerning(2.5).multilineTextAlignment(.center)
+//                    .frame(width: 400, height: 80)
+//                    .font(.system(size: 20))
+//                    .foregroundColor(Color("ScreenTextColor"))
+//                    .background(Color("TomorrowColor"))
+//                    .cornerRadius(50)
+//                    .padding(.bottom)
                 
                 EditButton().foregroundColor(Color("TextColor"))
                 
@@ -50,7 +51,7 @@ struct TomorrowView: View {
                     
                 }
                  
-                
+                .navigationBarTitle("TOMORROW", displayMode: .inline)
                 
             }
             

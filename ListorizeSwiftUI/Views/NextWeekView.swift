@@ -15,9 +15,10 @@ struct NextWeekView: View {
     
     var searchBar: some View {
         HStack {
-            TextField("Enter in a new task", text: self.$newToDo)
+            TextField("Listorize Next Week", text: self.$newToDo)
             Button(action: self.addNewToDo, label: {
-                Text("+").font(.system(size: 40)).foregroundColor(Color("TextColor"))
+                Image(systemName: "plus").foregroundColor(.black)
+                
             })
             }
         }
@@ -30,13 +31,13 @@ struct NextWeekView: View {
     var body: some View {
         
             VStack {
-                Text("NEXT WEEK").bold().kerning(2.5).multilineTextAlignment(.center)
-                    .frame(width: 400, height: 80)
-                    .font(.system(size: 20))
-                    .foregroundColor(Color("ScreenTextColor"))
-                    .background(Color("NextWeekColor"))
-                    .cornerRadius(50)
-                    .padding(.bottom)
+//                Text("NEXT WEEK").bold().kerning(2.5).multilineTextAlignment(.center)
+//                    .frame(width: 400, height: 80)
+//                    .font(.system(size: 20))
+//                    .foregroundColor(Color("ScreenTextColor"))
+//                    .background(Color("NextWeekColor"))
+//                    .cornerRadius(50)
+//                    .padding(.bottom)
                 
                 EditButton().foregroundColor(Color("TextColor"))
                 
@@ -50,7 +51,7 @@ struct NextWeekView: View {
                     
                 }
                  
-                
+                .navigationBarTitle("THIS WEEK", displayMode: .inline)
                 
             }
             

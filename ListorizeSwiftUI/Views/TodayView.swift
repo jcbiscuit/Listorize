@@ -16,9 +16,10 @@ struct TodayView: View {
     
     var searchBar: some View {
         HStack {
-            TextField("Enter in a new task", text: self.$newToDo)
+            TextField("Listorize Today", text: self.$newToDo)
             Button(action: self.addNewToDo, label: {
-                Text("+").font(.system(size: 40)).foregroundColor(Color("TextColor"))
+                Image(systemName: "plus").foregroundColor(.black)
+//                Text("+").font(.system(size: 40)).foregroundColor(Color("TextColor"))
             })
             }
         }
@@ -32,13 +33,13 @@ struct TodayView: View {
     var body: some View {
         
             VStack {
-                Text("TODAY").bold().kerning(2.5).multilineTextAlignment(.center)
-                    .frame(width: 400, height: 80)
-                    .font(.system(size: 20))
-                    .foregroundColor(Color("ScreenTextColor"))
-                    .background(Color("TodayColor"))
-                    .cornerRadius(50)
-                    .padding(.bottom)
+//                Text("TODAY").bold().kerning(2.5).multilineTextAlignment(.center)
+//                    .frame(width: 400, height: 80)
+//                    .font(.system(size: 20))
+//                    .foregroundColor(Color("ScreenTextColor"))
+//                    .background(Color("TodayColor"))
+//                    .cornerRadius(50)
+//                    .padding(.bottom)
                
                 EditButton().foregroundColor(Color("TextColor"))
                 
@@ -52,6 +53,7 @@ struct TodayView: View {
                     
                 }
                  
+                .navigationBarTitle("TODAY", displayMode: .inline)
                 
                 
                 

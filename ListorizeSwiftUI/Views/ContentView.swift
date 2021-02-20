@@ -18,7 +18,7 @@ struct SplashScreenView: View {
             ZStack {
                 Color("SplashScreen")
 
-                Image("LSB")
+                Image("ListorizeImage")
                     .resizable()
                     .renderingMode(.original)
                     .aspectRatio(contentMode: .fit)
@@ -36,11 +36,11 @@ struct SplashScreenView: View {
             }
 
     func animateSplash() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-            withAnimation(Animation.easeOut(duration: 0.45)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            withAnimation(Animation.easeOut(duration: 1.0)) {
                 animate.toggle()
             }
-            withAnimation(Animation.linear(duration: 0.35)) {
+            withAnimation(Animation.linear(duration: 1.0)) {
                 endSplash.toggle()
             }
         }
@@ -50,6 +50,7 @@ struct SplashScreenView: View {
 
    
 struct ContentView: View {
+    @State private var currentDate = Date()
     var body: some View {
         ZStack {
             Color("BackgroundColor")
@@ -60,70 +61,83 @@ struct ContentView: View {
                 VStack {
                     Text("LISTORIZE").bold().underline().kerning(2.5)
                         .font(.system(size: 40)).fontWeight(.thin).foregroundColor(Color("TextColor"))
-                        .padding(.bottom, 60)
+                        .padding(.bottom, 100)
                     
+                    
+                    HStack {
+                        
+                   
                     NavigationLink(
+                        
                         destination: TodayView()) {
                         Text("TODAY").bold().font(.system(size: 20)).kerning(2.5)
-                            .frame(width: 400, height: 70)
+                            .frame(width: 180, height: 70)
                             .foregroundColor(.black)
                             .background(ZStack {
                                 Color("TodayColor")
                                 LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
                             })
                             .cornerRadius(50)
-                            .padding()
+                            .padding(.all)
                 
             }
                     NavigationLink(
                         destination: TomorrowView()) {
                         Text("TOMORROW") .bold().font(.system(size: 20)).kerning(2.5)
-                            .frame(width: 400, height: 70)
+                            .frame(width: 180, height: 70)
                             .foregroundColor(.black)
                             .background(ZStack {
                                 Color("TomorrowColor")
                                 LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
                     })
                             .cornerRadius(50)
-                            .padding()
+                            .padding(.all)
                         
             }
-                    NavigationLink(
-                        destination: NextWeekView()) {
-                        Text("NEXT WEEK").bold().font(.system(size: 20)).kerning(2.5)
-                        .frame(width: 400, height: 70)
-                        .foregroundColor(.black)
-                        .background(ZStack {
-                            Color("NextWeekColor")
-                            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
-                    })
-                        .cornerRadius(50)
-                    .padding()
-            }
+                    }
+//                    NavigationLink(
+//                        destination: NextWeekView()) {
+//                        Text("THIS WEEK").bold().font(.system(size: 20)).kerning(2.5)
+//                        .frame(width: 400, height: 70)
+//                        .foregroundColor(.black)
+//                        .background(ZStack {
+//                            Color("NextWeekColor")
+//                            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
+//                    })
+//                        .cornerRadius(50)
+//                    .padding()
+//            }
                 NavigationLink(
-                    destination: NextMonthView()) {
-                    Text("NEXT MONTH").font(.system(size: 20)).bold().kerning(2.5)
+                    destination: UpcomingView()) {
+                    Text("UPCOMING").font(.system(size: 20)).bold().kerning(2.5)
                         .frame(width: 400, height: 70)
                         .foregroundColor(.black)
                         .background(ZStack {
-                            Color("NextMonthColor")
+                            Color("UpcomingColor")
                             LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
                         })
                         .cornerRadius(50)
                         .padding()
                 }
-                NavigationLink(
-                    destination: NextYearView()) {
-                    Text("NEXT YEAR").font(.system(size: 20)).bold().kerning(2.5)
-                        .frame(width: 400, height: 70)
-                        .foregroundColor(.black)
-                        .background(ZStack {
-                            Color("NextYearColor")
-                            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
-                        })
-                        .cornerRadius(50)
+                    
+
+                    DatePicker("Current Date", selection: $currentDate, in: Date()..., displayedComponents: .date)
                         .padding()
-                }
+                        .datePickerStyle(GraphicalDatePickerStyle())
+//                }
+                    
+//                NavigationLink(
+//                    destination: NextYearView()) {
+//                    Text("NEXT YEAR").font(.system(size: 20)).bold().kerning(2.5)
+//                        .frame(width: 400, height: 70)
+//                        .foregroundColor(.black)
+//                        .background(ZStack {
+//                            Color("NextYearColor")
+//                            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
+//                        })
+//                        .cornerRadius(50)
+//                        .padding()
+//                }
             }
         }
            
@@ -131,8 +145,8 @@ struct ContentView: View {
             
         }
     }
-}
-struct ContntView_Previews: PreviewProvider {
+
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
         ContentView()
@@ -141,3 +155,4 @@ struct ContntView_Previews: PreviewProvider {
     }
 }
 
+}

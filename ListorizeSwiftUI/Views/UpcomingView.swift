@@ -8,16 +8,17 @@
 import SwiftUI
 import Combine
 
-struct NextMonthView: View {
+struct UpcomingView: View {
     
     @ObservedObject var taskStore = TaskStore()
     @State var newToDo: String = ""
     
     var searchBar: some View {
         HStack {
-            TextField("Enter in a new task", text: self.$newToDo)
+            TextField("Listorize Next Month", text: self.$newToDo)
             Button(action: self.addNewToDo, label: {
-                Text("+").font(.system(size: 40)).foregroundColor(Color("TextColor"))
+                Image(systemName: "plus").foregroundColor(.black)
+               
             })
             }
         }
@@ -30,13 +31,13 @@ struct NextMonthView: View {
     var body: some View {
         
             VStack {
-                Text("NEXT MONTH").bold().kerning(2.5).multilineTextAlignment(.center)
-                    .frame(width: 400, height: 80)
-                    .font(.system(size: 20))
-                    .foregroundColor(Color("ScreenTextColor"))
-                    .background(Color("NextMonthColor"))
-                    .cornerRadius(50)
-                    .padding(.bottom)
+//                Text("NEXT MONTH").bold().kerning(2.5).multilineTextAlignment(.center)
+//                    .frame(width: 400, height: 80)
+//                    .font(.system(size: 20))
+//                    .foregroundColor(Color("ScreenTextColor"))
+//                    .background(Color("NextMonthColor"))
+//                    .cornerRadius(50)
+//                    .padding(.bottom)
                 
                 EditButton().foregroundColor(Color("TextColor"))
                 
@@ -50,7 +51,7 @@ struct NextMonthView: View {
                     
                 }
                 
-                
+                .navigationBarTitle("UPCOMING", displayMode: .inline)
                 
             }
             
@@ -74,10 +75,10 @@ struct NextMonthView: View {
         
     
 
-struct NextMonthViews_Preview: PreviewProvider {
+struct UpcomingView_Previews: PreviewProvider {
     static var previews: some View {
-        NextMonthView()
-        NextMonthView()
+        UpcomingView()
+        UpcomingView()
             .preferredColorScheme(.dark)
     }
 }

@@ -15,9 +15,10 @@ struct NextYearView: View {
     
     var searchBar: some View {
         HStack {
-            TextField("Enter in a new task", text: self.$newToDo)
+            TextField("Listorize This Year", text: self.$newToDo)
             Button(action: self.addNewToDo, label: {
-                Text("+").font(.system(size: 40)).foregroundColor(Color("TextColor"))
+                Image(systemName: "plus").foregroundColor(.black)
+                
             })
             }
         }
@@ -31,13 +32,13 @@ struct NextYearView: View {
     var body: some View {
         
             VStack {
-                Text("NEXT YEAR").bold().kerning(2.5).multilineTextAlignment(.center)
-                    .frame(width: 400, height: 80)
-                    .font(.system(size: 20))
-                    .foregroundColor(Color("ScreenTextColor"))
-                    .background(Color("NextYearColor"))
-                    .cornerRadius(50)
-                    .padding(.bottom)
+//                Text("NEXT YEAR").bold().kerning(2.5).multilineTextAlignment(.center)
+//                    .frame(width: 400, height: 80)
+//                    .font(.system(size: 20))
+//                    .foregroundColor(Color("ScreenTextColor"))
+//                    .background(Color("NextYearColor"))
+//                    .cornerRadius(50)
+//                    .padding(.bottom)
               
                 EditButton().foregroundColor(Color("TextColor"))
                 
@@ -52,7 +53,7 @@ struct NextYearView: View {
                     .onDelete(perform: self.delete)
                     
                 }
-                
+                .navigationBarTitle("THIS YEAR", displayMode: .inline)
                 
             }
            
