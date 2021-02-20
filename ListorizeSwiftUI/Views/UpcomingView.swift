@@ -12,68 +12,68 @@ struct UpcomingView: View {
     
     @ObservedObject var taskStore = TaskStore()
     @State var newToDo: String = ""
+    @State var open = false
     
     var searchBar: some View {
-        HStack {
-            TextField("Listorize Next Month", text: self.$newToDo)
-            Button(action: self.addNewToDo, label: {
-                Image(systemName: "plus").foregroundColor(.black)
-               
-            })
-            }
-        }
-        
-        func addNewToDo() {
-            taskStore.tasks.append(Task(id: String(taskStore.tasks.count + 1), toDoItem: newToDo))
-            self.newToDo = ""
-        }
+        TextField("Listorize Upcoming", text: self.$newToDo).foregroundColor(.black)
+            .multilineTextAlignment(.center)
+            .padding()
+            .foregroundColor(.black)
+            .background(Color("TodayColor"))
+            .cornerRadius(50)
+    }
+    
+    func addNewToDo() {
+        taskStore.tasks.append(Task(id: String(taskStore.tasks.count + 1), toDoItem: newToDo))
+        self.newToDo = ""
+    }
     
     var body: some View {
-        
-            VStack {
-//                Text("NEXT MONTH").bold().kerning(2.5).multilineTextAlignment(.center)
-//                    .frame(width: 400, height: 80)
-//                    .font(.system(size: 20))
-//                    .foregroundColor(Color("ScreenTextColor"))
-//                    .background(Color("NextMonthColor"))
-//                    .cornerRadius(50)
-//                    .padding(.bottom)
-                
-                EditButton().foregroundColor(Color("TextColor"))
-                
-                searchBar.padding()
-                
-                List {
-                    ForEach(self.taskStore.tasks) { task in
-                        Text(task.toDoItem)
-                    }.onMove(perform: self.move)
-                    .onDelete(perform: self.delete)
-                    
+        VStack {
+            HStack{
+                ZStack{
+                    searchBar.padding()
+                    Image(systemName: "pencil")
+                        .font(.system(size: 25, weight:.bold))
+                        .padding(.trailing, 240)
                 }
                 
-                .navigationBarTitle("UPCOMING", displayMode: .inline)
+                Button(action: self.addNewToDo, label: {
+                    Image(systemName: "plus")
+                        .foregroundColor(.white)
+                        .font(.system(size: 15, weight:.bold))
+                })
                 
+                .padding(20)
+                .background(Color(.systemBlue))
+                .mask(Circle())
+                .padding(5)
             }
             
-        }
-        
-    
-        func move(from soure: IndexSet, to destination: Int) {
-            taskStore.tasks.move(fromOffsets: soure, toOffset: destination)
-        }
-        
-        func delete(at offsets: IndexSet) {
-            taskStore.tasks.remove(atOffsets: offsets)
+            List {
+                ForEach(self.taskStore.tasks) { task in
+                    Text(task.toDoItem)
+                }.onMove(perform: self.move)
+                .onDelete(perform: self.delete)
+            }
+            
+            .navigationBarTitle("UPCOMING", displayMode: .inline)
+            .navigationBarItems(trailing:
+                                    EditButton().foregroundColor(Color(.systemBlue))
+            )
         }
     }
-                
-                
     
-                
-                
-//            LinearGradient(gradient: Gradient(colors: [Color.white.opacity(5.0), Color.clear]), startPoint: .bottom, endPoint: .top)
-        
     
+    func move(from soure: IndexSet, to destination: Int) {
+        taskStore.tasks.move(fromOffsets: soure, toOffset: destination)
+    }
+    
+    func delete(at offsets: IndexSet) {
+        taskStore.tasks.remove(atOffsets: offsets)
+    }
+    
+}
 
 struct UpcomingView_Previews: PreviewProvider {
     static var previews: some View {
