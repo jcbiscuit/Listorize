@@ -13,14 +13,16 @@ struct TodayView: View {
     @ObservedObject var taskStore = TaskStore()
     @State var newToDo: String = ""
     @State var open = false
+    @State var priority: String = "Normal"
+    
+    let priorities = ["High", "Normal", "Low"]
     
     
     var searchBar: some View {
         TextField("Listorize Today", text: self.$newToDo)
-            .multilineTextAlignment(.center)
             .padding()
             .foregroundColor(.black)
-            .background(Color("TodayColor"))
+            .background(Color.white)
             .cornerRadius(50)
     }
     
@@ -34,26 +36,30 @@ struct TodayView: View {
         
         VStack {
             HStack{
-                ZStack{
                     searchBar.padding()
-                    Image(systemName: "pencil")
-                        .font(.system(size: 25, weight:.bold))
-                        .padding(.trailing, 240)
-                }
                 
                 Button(action: self.addNewToDo, label: {
-                    Image(systemName: "plus")
+                    Image(systemName: "plus.circle.fill")
                         .foregroundColor(.white)
                         .font(.system(size: 15, weight:.bold))
                 })
                 
+               
+                
                 .padding(20)
                 .background(Color(.systemBlue))
-                .mask(Circle())
+                .mask(Circle().fill())
                 .padding(5)
             }
             
-            List {
+            Picker("Priority", selection: $priority) {
+                ForEach(priorities, id: \.self) {
+                    Text($0)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            
+            Form {
                 ForEach(self.taskStore.tasks) { task in
                     Text(task.toDoItem)
                 }.onMove(perform: self.move)

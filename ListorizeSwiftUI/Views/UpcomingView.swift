@@ -19,7 +19,7 @@ struct UpcomingView: View {
             .multilineTextAlignment(.center)
             .padding()
             .foregroundColor(.black)
-            .background(Color("TodayColor"))
+            .background(Color("UpcomingColor"))
             .cornerRadius(50)
     }
     

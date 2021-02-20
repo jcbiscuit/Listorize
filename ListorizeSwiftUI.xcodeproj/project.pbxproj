@@ -16,7 +16,6 @@
 		316C9BA025DBF556001A5E7C /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9B9F25DBF556001A5E7C /* TodayView.swift */; };
 		316C9BA525DBF56E001A5E7C /* TomorrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9BA425DBF56E001A5E7C /* TomorrowView.swift */; };
 		316C9BB225DBF588001A5E7C /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316C9BB125DBF588001A5E7C /* UpcomingView.swift */; };
-		3172BCEB25DE704E009FE08E /* ToDoSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3172BCEA25DE704E009FE08E /* ToDoSetupView.swift */; };
 		3172BCF825DE7123009FE08E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3172BCF725DE7123009FE08E /* File.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		316C9B9F25DBF556001A5E7C /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		316C9BA425DBF56E001A5E7C /* TomorrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomorrowView.swift; sourceTree = "<group>"; };
 		316C9BB125DBF588001A5E7C /* UpcomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingView.swift; sourceTree = "<group>"; };
-		3172BCEA25DE704E009FE08E /* ToDoSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoSetupView.swift; sourceTree = "<group>"; };
 		3172BCF725DE7123009FE08E /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +144,6 @@
 				316C9BA425DBF56E001A5E7C /* TomorrowView.swift */,
 				316C9BB125DBF588001A5E7C /* UpcomingView.swift */,
 				310F7FC625DB4C870027CA79 /* Info.plist */,
-				3172BCEA25DE704E009FE08E /* ToDoSetupView.swift */,
 				3172BCF725DE7123009FE08E /* File.swift */,
 			);
 			path = Views;
@@ -294,7 +291,6 @@
 				310F7FC025DB4C840027CA79 /* ContentView.swift in Sources */,
 				316C9BA525DBF56E001A5E7C /* TomorrowView.swift in Sources */,
 				3172BCF825DE7123009FE08E /* File.swift in Sources */,
-				3172BCEB25DE704E009FE08E /* ToDoSetupView.swift in Sources */,
 				316C9BA025DBF556001A5E7C /* TodayView.swift in Sources */,
 				310F7FBE25DB4C840027CA79 /* ListorizeSwiftUIApp.swift in Sources */,
 			);
