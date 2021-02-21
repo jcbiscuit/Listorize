@@ -23,14 +23,15 @@ struct TodayView: View {
 //    let priorities = ["High", "Normal", "Low"]
     
     
-    var searchBar: some View {
-        TextField("Listorize Today", text: self.$newToDo)
-            .padding()
-            .foregroundColor(Color("TextColor"))
+//    var searchBar: some View {
+//        Text("")
+//        TextField("Listorize Today", text: self.$newToDo)
+//            .padding()
+//            .foregroundColor(Color("TextColor"))
 //            .background(Color.white)
 //            .cornerRadius(50)
-    }
-    
+//    }
+//
     func addNewToDo() {
         taskStore.tasks.append(Task(id: String(taskStore.tasks.count + 1), toDoItem: newToDo))
         self.newToDo = ""
@@ -41,24 +42,25 @@ struct TodayView: View {
         
         VStack {
             HStack{
-                    searchBar.padding()
+//                    searchBar.padding()
                 
                 Button(action: {
                     self.showingAddToDoView.toggle()
                 }) {
                     Image(systemName: "plus")
-                        .foregroundColor(.white)
-                        .font(.system(size: 15, weight:.bold))
+                        .foregroundColor(Color(.systemBlue))
+                        .font(.system(size: 30, weight:.bold))
+                        
                 }
                 
                 .sheet(isPresented: $showingAddToDoView) {
                     AddToDoView().environment(\.managedObjectContext, self.managedObjectContext)
                 }
                 
-                .padding(20)
-                .background(Color(.systemBlue))
+                
+//                .background(Color(.systemBlue))
                 .mask(Circle().fill())
-                .padding(5)
+                .padding(.all)
             }
             
 //            Picker("Priority", selection: $priority) {

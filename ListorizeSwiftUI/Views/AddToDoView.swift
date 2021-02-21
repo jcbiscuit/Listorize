@@ -80,6 +80,8 @@ struct AddToDoView: View {
                                             self.presentationMode.wrappedValue.dismiss()
                                         }) {
                                             Image(systemName: "xmark")
+                                                .font(.system(size: 20, weight:.bold))
+                                        
                                         }
                 )
             }
