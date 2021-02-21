@@ -7,23 +7,28 @@
 
 import SwiftUI
 import Combine
+import CoreData
 
 struct TodayView: View {
+    
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     @ObservedObject var taskStore = TaskStore()
     @State var newToDo: String = ""
     @State var open = false
-    @State var priority: String = "Normal"
+    @State private var showingAddToDoView: Bool = false
     
-    let priorities = ["High", "Normal", "Low"]
+//    @State var priority: String = "Normal"
+    
+//    let priorities = ["High", "Normal", "Low"]
     
     
     var searchBar: some View {
         TextField("Listorize Today", text: self.$newToDo)
             .padding()
-            .foregroundColor(.black)
-            .background(Color.white)
-            .cornerRadius(50)
+            .foregroundColor(Color("TextColor"))
+//            .background(Color.white)
+//            .cornerRadius(50)
     }
     
     func addNewToDo() {
@@ -38,13 +43,17 @@ struct TodayView: View {
             HStack{
                     searchBar.padding()
                 
-                Button(action: self.addNewToDo, label: {
-                    Image(systemName: "plus.circle.fill")
+                Button(action: {
+                    self.showingAddToDoView.toggle()
+                }) {
+                    Image(systemName: "plus")
                         .foregroundColor(.white)
                         .font(.system(size: 15, weight:.bold))
-                })
+                }
                 
-               
+                .sheet(isPresented: $showingAddToDoView) {
+                    AddToDoView().environment(\.managedObjectContext, self.managedObjectContext)
+                }
                 
                 .padding(20)
                 .background(Color(.systemBlue))
@@ -52,11 +61,11 @@ struct TodayView: View {
                 .padding(5)
             }
             
-            Picker("Priority", selection: $priority) {
-                ForEach(priorities, id: \.self) {
-                    Text($0)
-                }
-            }
+//            Picker("Priority", selection: $priority) {
+//                ForEach(priorities, id: \.self) {
+//                    Text($0)
+//                }
+//            }
             .pickerStyle(SegmentedPickerStyle())
             
             Form {
