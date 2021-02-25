@@ -19,22 +19,6 @@ struct TodayView: View {
     @State var open = false
     @State private var showingAddToDoView: Bool = false
     
-    //    @State var priority: String = "Normal"
-    
-    //    let priorities = ["High", "Normal", "Low"]
-    
-    
-    //    var searchBar: some View {
-    //        Text("")
-    //        TextField("Listorize Today", text: self.$newToDo)
-    //            .padding()
-    //            .foregroundColor(Color("TextColor"))
-    //            .background(Color.white)
-    //            .cornerRadius(50)
-    //    }
-    
-    
-    //
     func addNewToDo() {
         taskStore.tasks.append(Task(id: String(taskStore.tasks.count + 1), toDoItem: newToDo))
         self.newToDo = ""
@@ -42,9 +26,8 @@ struct TodayView: View {
     
     var body: some View {
         
+        // MARK: - START OF VSTACK
         VStack {
-            //                    searchBar.padding()
-            
             Button(action: {
                 self.showingAddToDoView.toggle()
             }) {
@@ -57,16 +40,12 @@ struct TodayView: View {
             .sheet(isPresented: $showingAddToDoView) {
                 AddToDoView().environment(\.managedObjectContext, self.managedObjectContext)
             }
-            //                .background(Color(.systemBlue))
+           
             .mask(Circle().fill())
             .padding()
             
             
-            //            Picker("Priority", selection: $priority) {
-            //                ForEach(priorities, id: \.self) {
-            //                    Text($0)
-            //                }
-            //            }
+          
             .pickerStyle(SegmentedPickerStyle())
             
             Form {
@@ -82,10 +61,16 @@ struct TodayView: View {
             .navigationBarItems(trailing:
                                     EditButton().foregroundColor(Color(.systemBlue))
             )
+            
+          
         }
+           
+            // MARK: - END OF VSTACK
+   
+        
+        
+    
     }
-    
-    
     
     func move(from soure: IndexSet, to destination: Int) {
         taskStore.tasks.move(fromOffsets: soure, toOffset: destination)
@@ -100,10 +85,8 @@ struct TodayView_Previews: PreviewProvider {
     static var previews: some View {
         TodayView()
         TodayView()
-        
-        //        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        //        return TodayView()
-        //            .environment(\.managedObjectContext, context)
+            .preferredColorScheme(.dark)
+      
     }
 }
 

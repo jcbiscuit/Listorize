@@ -11,60 +11,12 @@ import CoreData
 struct AddToDoView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    //    @Environment(\.managedObjectContext) var managedObjectContext
     
     
     @State private var name: String = ""
     @State private var errorShowing: Bool = false
     @State private var errorTitle: String = ""
     @State private var errorMessage: String = ""
-    
-    //
-    //    func addNewItem() {
-    //
-    //        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-    //            return
-    //        }
-    //
-    //        let managedContext = appDelegate.persistentContainer.viewContext
-    //
-    //        let entity = NSEntityDescription.entity(forEntityName: "Saving", in: managedContext)!
-    //
-    //        let newToDo = NSManagedObject(entity: entity, insertInto: managedContext)
-    //
-    //        newToDo.setValue($name.wrappedValue, forKeyPath: "stringAttribute")
-    //
-    //        _ = Saving(context: self.managedObjectContext)
-    //
-    //
-    //
-    //    }
-    
-    //    func loadSaved() {
-    //        guard let appDelegate =
-    //                UIApplication.shared.delegate as? AppDelegate else {
-    //            return
-    //        }
-    //
-    //        let managedContext =
-    //            appDelegate.persistentContainer.viewContext
-    //
-    //        let fetchRequest =
-    //        NSFetchRequest<NSManagedObject>(entityName: "Saving")
-    //
-    //            do {
-    //               _ = try managedContext.fetch(fetchRequest)
-    //            } catch let error as NSError {
-    //                print("Could not fetch. \(error), \(error.userInfo)")
-    //            }
-    //
-    //    }
-    //        do {
-    //            try managedContext.save()
-    //            print("saved successfully -- \($name.wrappedValue)")
-    //        } catch let error as NSError {
-    //            print("Could not save. \(error), \(error.userInfo)")
-    //        }
     
     
     var body: some View {
@@ -77,7 +29,7 @@ struct AddToDoView: View {
                     
                     Button(action: {
                         if self.name != "" {
-                            //                            addNewItem()
+
                             
                         } else {
                             self.errorShowing = true
